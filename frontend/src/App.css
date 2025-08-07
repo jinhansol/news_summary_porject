@@ -1,0 +1,217 @@
+/* 🔹 전체 body 기본 설정 */
+body {
+  margin: 0;
+  background-color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 🔹 앱 컨테이너 – 전체 높이 설정 */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* 🔹 메인 콘텐츠 – 수직 구성, 중앙 정렬 */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: white;
+}
+
+/* 🔹 가운데 영역 – 가로 최대 600px */
+.center-area {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* 🔹 상단 햄스터 영역 (기본/로딩 상태 안내) */
+.top-hamster-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+  min-height: 70px;
+}
+
+/* 🔹 햄스터 이미지 크기 조정 (살짝 키움) */
+.hamster-main {
+  width: 200px;      /* 기존 140px → 160px */
+  margin-bottom: 10px;
+}
+
+/* 🔹 "요즘 화제되는 뉴스…" 텍스트 */
+.prompt-text {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 8px;    /* 이미 축소해두신 상태 */
+  width: 100%;           /* 블록 너비를 확보하고 */
+  text-align: center;    /* 텍스트를 가운데로 정렬 */
+}
+
+
+/* 🔹 인기 키워드 영역 (위쪽 여백 축소 & 중앙 정렬) */
+.popular-keywords {
+  margin-top: 1px;    /* 기존 1rem → 4px */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.keyword-list {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.keyword-chip {
+  background: #eef;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.keyword-chip:hover {
+  background: #dde;
+}
+
+/* 🔹 검색 바 – 검색창 & 버튼 묶음 */
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* 🔹 검색 인풋 박스 */
+.search-bar input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  min-width: 0;
+}
+
+/* 🔹 검색 버튼, 마이크 버튼 */
+.search-bar button {
+  padding: 12px 16px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  min-width: 56px;
+}
+
+/* 🔹 로딩 애니메이션 */
+.loader {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* 🔹 로딩 중 햄스터 이미지 */
+.loader-img {
+  width: 150px;
+  margin-bottom: 8px;
+}
+
+/* 🔹 대화창 – 메시지가 출력되는 영역 */
+.chat-window {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* 🔹 각각의 메시지 묶음 (사용자 질문 + 챗봇 응답) */
+.chat-message-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 🔹 말풍선 공통 스타일 */
+.chat-bubble {
+  padding: 12px 16px;
+  border-radius: 16px;
+  max-width: 90%;
+  word-break: break-word;
+}
+
+/* 👤 사용자 메시지 말풍선 */
+.chat-bubble.user {
+  background-color: #daf1ff;
+  align-self: flex-end;
+  text-align: right;
+}
+
+/* 🤖 챗봇 뉴스 응답 말풍선 */
+.chat-bubble.ai {
+  background-color: #f5f5f5;
+  align-self: flex-start;
+}
+
+/* 🔹 뉴스 카드 내부 */
+.news-card {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 8px;
+}
+
+/* 🔹 대화창 안에 위치한 "기록삭제" 버튼 */
+.clear-btn-in-chat {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.clear-btn-in-chat:hover {
+  background-color: #c0392b;
+}
+
+/* ✅ 반응형 대응 (모바일용) */
+@media (max-width: 640px) {
+  .center-area,
+  .search-bar,
+  .chat-window {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
+  }
+
+  .chat-window {
+    height: 260px;
+    min-height: 120px;
+    padding: 10px;
+  }
+
+  .hamster-main {
+    width: 90px;
+  }
+}
